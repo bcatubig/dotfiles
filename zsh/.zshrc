@@ -5,7 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -46,8 +45,6 @@ zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 zinit snippet OMZL::directories.zsh
 
-
-
 autoload -U compinit && compinit
 
 zinit cdreplay -q
@@ -55,20 +52,24 @@ zinit cdreplay -q
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Load OSX specific things
+if [[ $(uname) == "Darwin" ]]; then
+  if [[ -d "/opt/homebrew" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  fi
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+  if [[ -d "/opt/homebrew/share/google-cloud-sdk" ]]; then
+    source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+    source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+  fi
+fi
 
 # Keybinds
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
-
-
-
 # History
-HISTSIZE=5000
+HISTSIZE=10000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
@@ -92,5 +93,10 @@ alias ls='ls --color'
 alias vim='nvim'
 alias lg='lazygit'
 
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+if which fzf &> /dev/null; then
+  eval "$(fzf --zsh)"
+fi
+
+if which zoxide &> /dev/null; then
+  eval "$(zoxide init --cmd cd zsh)"
+fi
