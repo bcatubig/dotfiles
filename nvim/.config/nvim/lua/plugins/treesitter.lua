@@ -1,9 +1,9 @@
 return {
   'nvim-treesitter/nvim-treesitter',
-  build = ":TSUpdate",
+  build = ':TSUpdate',
   config = function()
-    local configs = require('nvim-treesitter.configs')
-    configs.setup({
+    local configs = require 'nvim-treesitter.configs'
+    configs.setup {
       ensure_installed = {
         'bash',
         'c',
@@ -24,6 +24,7 @@ return {
         'proto',
         'puppet',
         'python',
+        'regex',
         'ruby',
         'sql',
         'terraform',
@@ -88,6 +89,6 @@ return {
           },
         },
       },
-    })
+    }
   end,
 }
