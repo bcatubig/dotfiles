@@ -93,13 +93,13 @@ alias ls='ls --color'
 alias vim='nvim'
 alias lg='lazygit'
 
-if which fzf &> /dev/null; then
+if command -v fzf &> /dev/null; then
   eval "$(fzf --zsh)"
 else
   echo "[ERROR] fzf missing"
 fi
 
-if which zoxide &> /dev/null; then
+if command -v zoxide &> /dev/null; then
   eval "$(zoxide init --cmd cd zsh)"
 else
   echo "[ERROR] zoxide missing"
