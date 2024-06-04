@@ -64,6 +64,13 @@ if [[ $(uname) == "Darwin" ]]; then
   fi
 fi
 
+if [[ $(uname) == "Linux" ]]; then
+  if [[ -d "/home/linuxbrew/.linuxbrew" ]]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  fi
+  export PATH="$PATH:$HOME/.local.bin"
+fi
+
 # Keybinds
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
