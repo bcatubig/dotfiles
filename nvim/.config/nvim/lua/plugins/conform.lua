@@ -33,6 +33,8 @@ return {
         terraform = { 'terraform_fmt' },
         ['terraform-vars'] = { 'terraform_fmt' },
         yaml = { 'prettier' },
+        jinja = { 'djlint' },
+        ['sls.yaml'] = { 'djlint' },
         ['*'] = { 'codespell', 'trim_whitespace', 'trim_newlines' },
       },
       format = {

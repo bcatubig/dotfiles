@@ -71,6 +71,12 @@ return {
             'template',
           },
         },
+        jinja_lsp = {
+          filetypes = {
+            'jinja',
+            'sls.yaml',
+          },
+        },
         jsonls = {},
         lua_ls = {
           Lua = {
