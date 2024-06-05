@@ -16,3 +16,10 @@ vim.api.nvim_create_autocmd('TermOpen', {
   end,
   pattern = '*',
 })
+
+local salt_syn = vim.api.nvim_create_augroup('salt_syn', { clear = true })
+vim.api.nvim_create_autocmd('BufWinEnter', {
+  command = 'set filetype=sls.yaml',
+  group = salt_syn,
+  pattern = '*.sls',
+})
