@@ -111,6 +111,7 @@ return {
             validate = { enable = true },
           },
         },
+        zls = {},
       }
 
       require('neodev').setup {}
