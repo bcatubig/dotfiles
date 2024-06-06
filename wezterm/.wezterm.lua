@@ -5,12 +5,20 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
+local is_linux = function()
+    return wezterm.target_triple:find("linux") ~= nil
+end
+
+local is_darwin = function()
+    return wezterm.target_triple:find("darwin") ~= nil
+end
+
 config.color_scheme = "nordfox"
 config.window_background_opacity = 0.95
 config.font = wezterm.font("JetBrainsMono Nerd Font", {
     weight = "Medium"
 })
-config.font_size = 16
+config.font_size = is_darwin() and 16 or 14
 config.mouse_wheel_scrolls_tabs = false
 config.window_close_confirmation = "NeverPrompt"
 config.audible_bell = "Disabled"
