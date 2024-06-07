@@ -52,7 +52,7 @@ zinit cdreplay -q
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Load OSX specific things
+# OSX Specific
 if [[ $(uname) == "Darwin" ]]; then
   if [[ -d "/opt/homebrew" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -64,11 +64,20 @@ if [[ $(uname) == "Darwin" ]]; then
   fi
 fi
 
+# Linux specific
 if [[ $(uname) == "Linux" ]]; then
   if [[ -d "/home/linuxbrew/.linuxbrew" ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   fi
   export PATH="$PATH:$HOME/.local.bin"
+fi
+
+# pyenv
+if [[ -d "${HOME}/.pyenv" ]]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
 fi
 
 # Keybinds
