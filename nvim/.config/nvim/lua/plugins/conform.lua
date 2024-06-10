@@ -14,6 +14,11 @@ return {
         desc = '[F]ormat buffer',
       },
     },
+    config = function(_, opts)
+      local conform = require 'conform'
+
+      conform.setup(opts)
+    end,
     opts = {
       notify_on_error = false,
       format_on_save = function(bufnr)
@@ -34,6 +39,7 @@ return {
         markdown = { 'prettier' },
         python = { 'isort' },
         yaml = { 'prettier' },
+        ['sls.yaml'] = {},
       },
     },
   },
