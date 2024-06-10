@@ -9,6 +9,7 @@ return {
         go = { 'golangcilint' },
         markdown = { 'markdownlint' },
         python = { 'ruff' },
+        sls = { 'saltlint' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
