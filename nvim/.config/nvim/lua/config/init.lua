@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require 'config.options'
 require 'config.keymaps'
+require 'config.augroups'
 
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
