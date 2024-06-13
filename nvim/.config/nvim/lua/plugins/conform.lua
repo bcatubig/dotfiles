@@ -33,6 +33,7 @@ return {
       end,
       formatters_by_ft = {
         html = { 'prettier' },
+        c = { 'clang-format' },
         css = { 'prettier' },
         javascript = { 'prettier' },
         lua = { 'stylua' },
