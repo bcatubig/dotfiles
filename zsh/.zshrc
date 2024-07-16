@@ -69,8 +69,10 @@ if [[ $(uname) == "Linux" ]]; then
   if [[ -d "/home/linuxbrew/.linuxbrew" ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   fi
-  export PATH="$PATH:$HOME/.local.bin"
 fi
+
+
+export PATH="$PATH:$HOME/.local/bin:$HOME/go/bin"
 
 # pyenv
 if [[ -d "${HOME}/.pyenv" ]]; then
