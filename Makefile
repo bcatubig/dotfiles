@@ -17,5 +17,9 @@ tmux:
 wezterm:
 	stow wezterm
 
+.PHONY: sqlite
+sqlite:
+	stow sqlite
+
 .PHONY: clean
 clean:
