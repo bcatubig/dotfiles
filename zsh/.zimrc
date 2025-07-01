@@ -1,0 +1,24 @@
+# Zim Defaults
+zmodule environment
+zmodule input
+zmodule termtitle
+zmodule utility
+
+zmodule zsh-users/zsh-completions --fpath src
+zmodule completion
+zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-history-substring-search
+zmodule zsh-users/zsh-autosuggestions
+
+
+# User Modules
+zmodule fzf
+
+zmodule ohmyzsh/ohmyzsh --root plugins/command-not-found
+zmodule ohmyzsh/ohmyzsh --root plugins/git
+zmodule ohmyzsh/ohmyzsh --root plugins/kubectl
+zmodule ohmyzsh/ohmyzsh --root plugins/kubectx
+zmodule ohmyzsh/ohmyzsh --source lib/directories.zsh
+
+zmodule Aloxaf/fzf-tab
+zmodule romkatv/powerlevel10k
