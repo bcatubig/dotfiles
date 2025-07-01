@@ -8,17 +8,28 @@ zmodule zsh-users/zsh-completions --fpath src
 zmodule completion
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
-zmodule zsh-users/zsh-autosuggestions
 
+# End of zim default install
 
-# User Modules
 zmodule fzf
+zmodule git
+zmodule homebrew
 
+# zim community modules
+zmodule joke/zim-kubectl
+zmodule joke/zim-yq
+
+# ohmyzsh plugins
 zmodule ohmyzsh/ohmyzsh --root plugins/command-not-found
-zmodule ohmyzsh/ohmyzsh --root plugins/git
-zmodule ohmyzsh/ohmyzsh --root plugins/kubectl
-zmodule ohmyzsh/ohmyzsh --root plugins/kubectx
+#zmodule ohmyzsh/ohmyzsh --root plugins/git
+#zmodule ohmyzsh/ohmyzsh --root plugins/kubectl
+#zmodule ohmyzsh/ohmyzsh --root plugins/kubectx
+
+# ohmyzsh libraries
 zmodule ohmyzsh/ohmyzsh --source lib/directories.zsh
 
 zmodule Aloxaf/fzf-tab
 zmodule romkatv/powerlevel10k
+
+# Last
+zmodule zsh-users/zsh-autosuggestions
