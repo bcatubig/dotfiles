@@ -130,9 +130,6 @@ return {
         },
       })
 
-      -- local original_capabilities = vim.lsp.protocol.make_client_capabilities()
-      -- local capabilities = vim.tbl_deep_extend("force", original_capabilities, require("cmp_nvim_lsp").default_capabilities())
-
       local capabilities = require("blink.cmp").get_lsp_capabilities()
 
       local servers = {
@@ -149,9 +146,18 @@ return {
             },
           },
         },
-        ansiblels = {},
+        ansiblels = {
+          filetypes = { "foo.bar" },
+        },
         astro = {},
-        bashls = {},
+        bashls = {
+          filetypes = { "bash", "sh", "zsh" },
+          settings = {
+            bashIde = {
+              globPattern = "*@(.sh|.inc|.bash|.zsh|.command)",
+            },
+          },
+        },
         clangd = {},
         cssls = {},
         dockerls = {},
@@ -201,17 +207,10 @@ return {
         run_on_start = false,
       })
 
-      require("mason-lspconfig").setup({
-        ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
-        automatic_installation = false,
-        handlers = {
-          function(server_name)
-            local server = servers[server_name] or {}
-            server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-            require("lspconfig")[server_name].setup(server)
-          end,
-        },
-      })
+      for server, cfg in pairs(servers) do
+        vim.lsp.enable(server)
+        vim.lsp.config(server, cfg)
+      end
     end,
   },
 }
