@@ -144,6 +144,7 @@ source ~/.zsh.d/aliases.zsh
 source ~/.zsh.d/homebrew.zsh
 source ~/.zsh.d/paths.zsh
 source ~/.zsh.d/tmux.zsh
+source ~/.zsh.d/pyenv.zsh
 
 # Source any custom configs
 [[ ! -f ~/custom.zsh ]] || source ~/custom.zsh
