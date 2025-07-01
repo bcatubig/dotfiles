@@ -208,6 +208,7 @@ return {
       })
 
       for server, cfg in pairs(servers) do
+        cfg.capabilities = capabilities
         vim.lsp.enable(server)
         vim.lsp.config(server, cfg)
       end
