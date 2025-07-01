@@ -45,6 +45,10 @@ brew_packages=(
   sshpass
   ssh-copy-id
   openjdk@17
+  yazi
+  7zip
+  jq
+  resvg
 )
 
 info "Installing homebrew packages"
