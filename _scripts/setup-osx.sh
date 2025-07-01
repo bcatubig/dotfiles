@@ -44,6 +44,7 @@ brew_packages=(
   htop
   sshpass
   ssh-copy-id
+  openjdk@17
 )
 
 info "Installing homebrew packages"
