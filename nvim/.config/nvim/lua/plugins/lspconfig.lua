@@ -13,9 +13,9 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       { "williamboman/mason.nvim", opts = {} },
-      "williamboman/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
       "saghen/blink.cmp",
+      "b0o/schemastore.nvim",
     },
     config = function()
       vim.api.nvim_create_autocmd("LspAttach", {
@@ -186,16 +186,20 @@ return {
         yamlls = {
           settings = {
             yaml = {
-              schemas = {
-                kubernetes = "*.yaml",
-                ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
-                ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-                ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/**/*.{yml,yaml}",
-                ["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
-                ["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
-                ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
-                ["http://json.schemastore.org/circleciconfig"] = ".circleci/**/*.{yml,yaml}",
+              schemaStore = {
+                enable = false,
+                url = "",
               },
+              schemas = require("schemastore").yaml.schemas({
+                extra = {
+                  {
+                    name = "kubernetes",
+                    description = "Kubernetes 1.31.7",
+                    url = "kubernetes",
+                    fileMatch = "*.yaml",
+                  },
+                },
+              }),
             },
           },
         },
