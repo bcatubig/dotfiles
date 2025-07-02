@@ -19,6 +19,7 @@ opt.inccommand = "split"
 opt.confirm = true
 opt.termguicolors = true
 -- opt.winborder = "rounded"
+opt.winborder = "single"
 
 vim.schedule(function()
   opt.clipboard = "unnamedplus"
@@ -39,4 +40,3 @@ opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldnestmax = 4
 opt.foldtext = ""
-opt.winborder = "single"
