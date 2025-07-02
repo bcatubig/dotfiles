@@ -1,5 +1,6 @@
 return {
   "swaits/scratch.nvim",
+  event = "VeryLazy",
   opts = {},
   cmd = {
     "Scratch",

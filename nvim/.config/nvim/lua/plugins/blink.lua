@@ -49,7 +49,7 @@ return {
       },
 
       sources = {
-        default = { "lsp", "path", "snippets", "buffer" },
+        default = { "lsp", "path", "snippets" },
       },
 
       fuzzy = { implementation = "prefer_rust_with_warning" },
