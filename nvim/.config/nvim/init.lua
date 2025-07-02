@@ -1,11 +1,7 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-vim.g.have_nerd_font = true
+require("core.lsp")
 
-require("config.lazy")
-require("config.opts")
+require("config.options")
 require("config.keymaps")
-require("config.filetypes")
+require("config.autocmds")
 
--- Disable LSP Logging
-vim.lsp.set_log_level("off")
+require("core.lazy")
