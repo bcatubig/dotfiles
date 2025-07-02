@@ -12,7 +12,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      { "williamboman/mason.nvim", opts = {} },
+      { "mason-org/mason.nvim", opts = {} },
       "WhoIsSethDaniel/mason-tool-installer.nvim",
       "saghen/blink.cmp",
       "b0o/schemastore.nvim",
@@ -130,12 +130,10 @@ return {
         },
       })
 
-      local capabilities = require("blink.cmp").get_lsp_capabilities()
-
       local servers = {
-        lua_ls = {
+        ["lua_ls"] = {
           -- cmd = { ... },
-          -- filetypes = { ... },
+          filetypes = { "lua" },
           -- capabilities = {},
           settings = {
             Lua = {
@@ -146,11 +144,9 @@ return {
             },
           },
         },
-        ansiblels = {
-          filetypes = { "foo.bar" },
-        },
-        astro = {},
-        bashls = {
+        ["ansible-language-server"] = {},
+        ["astro-language-server"] = {},
+        ["bash-language-server"] = {
           filetypes = { "bash", "sh", "zsh" },
           settings = {
             bashIde = {
@@ -159,9 +155,9 @@ return {
           },
         },
         clangd = {},
-        cssls = {},
-        dockerls = {},
-        emmet_ls = {},
+        ["css-lsp"] = {},
+        ["dockerfile-language-server"] = {},
+        ["emmet-language-server"] = {},
         ["gh-actions-language-server"] = {},
         gopls = {
           settings = {
@@ -176,14 +172,14 @@ return {
           },
         },
         templ = {},
-        html = {},
-        htmx = {},
-        tailwindcss = {},
-        basedpyright = {},
+        ["html-lsp"] = {},
+        ["htmx-lsp"] = {},
+        ["tailwindcss-language-server"] = {},
         ruff = {},
-        terraformls = {},
+        pyright = {},
+        ["terraform-ls"] = {},
         ["typescript-language-server"] = {},
-        yamlls = {
+        ["yaml-language-server"] = {
           settings = {
             yaml = {
               schemaStore = {
@@ -226,6 +222,7 @@ return {
         run_on_start = false,
       })
 
+      local capabilities = require("blink.cmp").get_lsp_capabilities()
       for server, cfg in pairs(servers) do
         cfg.capabilities = capabilities
         vim.lsp.enable(server)
