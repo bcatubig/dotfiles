@@ -49,6 +49,7 @@ brew_packages=(
   7zip
   jq
   resvg
+  eza
 )
 
 info "Installing homebrew packages"
