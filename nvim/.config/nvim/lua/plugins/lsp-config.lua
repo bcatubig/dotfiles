@@ -47,10 +47,11 @@ return {
     "b0o/schemastore.nvim",
   },
   config = function()
-    -- Enable LSP
+    local capabilities = require("blink.cmp").get_lsp_capabilities()
+
     vim.lsp.enable({
-      "ansiblels",
       "astro",
+      "ansiblels",
       "bashls",
       "clangd",
       "cssls",
@@ -59,35 +60,21 @@ return {
       "gh_actions_ls",
       "gopls",
       "html",
-      "htmx",
       "lua_ls",
-      "pyright",
-      "ruff",
       "sqlls",
       "tailwindcss",
+      "pyright",
+      "ruff",
       "templ",
       "terraformls",
       "yamlls",
     })
 
-    -- LSP Configs
-    vim.lsp.config("yamlls", {
+    vim.lsp.config("bashls", {
+      filetypes = { "bash", "sh", "zsh" },
       settings = {
-        yaml = {
-          schemaStore = {
-            enable = false,
-            url = "",
-          },
-          schemas = require("schemastore").yaml.schemas({
-            -- extra = {
-            --   {
-            --     name = "kubernetes",
-            --     description = "Kubernetes 1.31.7",
-            --     url = "kubernetes",
-            --     fileMatch = "*.yaml",
-            --   },
-            -- },
-          }),
+        bashIde = {
+          globPattern = "*@(.sh|.inc|.bash|.zsh|.command)",
         },
       },
     })
