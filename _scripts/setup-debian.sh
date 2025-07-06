@@ -75,5 +75,8 @@ echo "[+] installed wezterm configs"
 stow tmux
 echo "[+] installed tmux configs"
 
+stow sqlite
+echo "[+] installed sqlite configs"
+
 info "Reloading ZSH"
 exec zsh -l
