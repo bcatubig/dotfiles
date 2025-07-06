@@ -16,8 +16,9 @@ return {
       keymap = { preset = "enter" },
 
       cmdline = {
-        enabled = true,
-        sources,
+        completion = {
+          ghost_text = { enabled = true },
+        },
       },
       appearance = {
         nerd_font_variant = "normal",
@@ -25,6 +26,12 @@ return {
       },
 
       completion = {
+        list = {
+          selection = {
+            preselect = false,
+          },
+        },
+
         menu = {
           border = nil,
           scrolloff = 1,
@@ -53,7 +60,7 @@ return {
       },
 
       fuzzy = { implementation = "prefer_rust_with_warning" },
-      -- signature = { enabled = true },
+      signature = { enabled = true },
     })
   end,
   opts_extend = { "sources.default" },
