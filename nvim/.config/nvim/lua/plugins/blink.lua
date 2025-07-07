@@ -3,6 +3,7 @@ return {
   "saghen/blink.cmp",
   dependencies = {
     "rafamadriz/friendly-snippets",
+    { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
   },
   version = "1.*",
   config = function()
@@ -56,7 +57,13 @@ return {
       },
 
       sources = {
-        default = { "lsp", "path", "snippets" },
+        default = { "lsp", "path", "snippets", "buffer" },
+        per_filetype = {
+          sql = { "lsp", "dadbod", "snippets", "buffer" },
+        },
+        providers = {
+          dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+        },
       },
 
       fuzzy = { implementation = "prefer_rust_with_warning" },
