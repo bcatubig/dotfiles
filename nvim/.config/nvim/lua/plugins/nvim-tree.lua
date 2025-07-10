@@ -4,7 +4,11 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   lazy = false,
-  opts = {},
+  config = function()
+    vim.g.nvim_tree_respect_buf_cwd = 1
+
+    require("nvim-tree").setup({})
+  end,
   keys = {
     {
       "<leader>e",
