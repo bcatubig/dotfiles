@@ -33,6 +33,7 @@ return {
         toml = { "prettier" },
         terraform = { "terraform_fmt" },
         sql = { "sqlfluff" },
+        templ = { "gofumpt", "templ", "injected" },
         ["*"] = { "trim_newlines", "trim_whitespace" },
       },
 
