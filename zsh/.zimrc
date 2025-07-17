@@ -4,6 +4,7 @@ zmodule input
 zmodule termtitle
 zmodule utility
 zmodule archive
+zmodule direnv
 
 zmodule zsh-users/zsh-completions --fpath src
 zmodule completion
