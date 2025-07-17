@@ -4,7 +4,6 @@ zmodule input
 zmodule termtitle
 zmodule utility
 zmodule archive
-zmodule direnv
 
 zmodule zsh-users/zsh-completions --fpath src
 zmodule completion
@@ -34,4 +33,5 @@ zmodule Aloxaf/fzf-tab
 zmodule romkatv/powerlevel10k
 
 # Last
+zmodule direnv
 zmodule zsh-users/zsh-autosuggestions
