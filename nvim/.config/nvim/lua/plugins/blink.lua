@@ -29,7 +29,7 @@ return {
       completion = {
         list = {
           selection = {
-            preselect = false,
+            -- preselect = false,
           },
         },
 
