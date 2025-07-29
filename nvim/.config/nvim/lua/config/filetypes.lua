@@ -1,6 +1,7 @@
 vim.filetype.add({
   extension = {
-    sls = "sls.yaml",
+    sls = "sls.yaml.jinja",
+    j2 = "jinja",
   },
   pattern = {
     [".*.service"] = "systemd",
@@ -16,6 +17,9 @@ vim.filetype.add({
     [".*/roles/.*/handlers/.*%.ya?ml"] = "yaml.ansible",
     [".*/tasks/.*%.ya?ml"] = "yaml.ansible",
     [".*/molecule/.*%.ya?ml"] = "yaml.ansible",
-    [".*.j2"] = "jinja",
+    [".*/templates/.*.yaml"] = "helm",
+    [".*/templates/.*.tpl"] = "helm",
+    [".*.conf.j2"] = "conf.jinja",
+    [".*.yaml.j2"] = "yaml.jinja",
   },
 })
