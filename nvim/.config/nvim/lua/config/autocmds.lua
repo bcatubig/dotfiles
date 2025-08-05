@@ -7,6 +7,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
       mode = mode or "n"
       vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
     end
+    vim.keymap.del("n", "grr")
+    vim.keymap.del("n", "gri")
+    vim.keymap.del("n", "grn")
+    vim.keymap.del("n", "gra")
+    vim.keymap.del("n", "grt")
 
     map("K", vim.lsp.buf.hover, "Show Hover")
 
