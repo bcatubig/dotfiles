@@ -60,7 +60,6 @@ return {
       "gopls",
       "html",
       "lua_ls",
-      "sqlls",
       "tailwindcss",
       "postgres_lsp",
       "pyright",
