@@ -6,7 +6,7 @@
   "conform.nvim": { "branch": "master", "commit": "973f3cb73887d510321653044791d7937c7ec0fa" },
   "everforest": { "branch": "master", "commit": "4132e797f6ce555de53825b6ef3df0b618456703" },
   "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },
-  "fzf-lua": { "branch": "main", "commit": "df916902bcefde1119c05a57376d679a388db5fc" },
+  "fzf-lua": { "branch": "main", "commit": "5a0581cf0d8a9336404f99a53f28472d3a8efe1a" },
   "gitsigns.nvim": { "branch": "main", "commit": "ca8bf696be575efa925ef531c4efd897b5c3086b" },
   "harpoon": { "branch": "harpoon2", "commit": "ed1f853847ffd04b2b61c314865665e1dadf22c7" },
   "indent-blankline.nvim": { "branch": "master", "commit": "005b56001b2cb30bfa61b7986bc50657816ba4ba" },
