@@ -160,6 +160,7 @@ zstyle ':fzf-tab:*' use-fzf-default-opts yes
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
 # Load our stuff
+source ~/.zsh.d/arch.zsh
 source ~/.zsh.d/aliases.zsh
 source ~/.zsh.d/homebrew.zsh
 source ~/.zsh.d/paths.zsh
