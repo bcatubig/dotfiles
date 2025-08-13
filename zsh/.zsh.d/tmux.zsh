@@ -6,7 +6,7 @@ function tnew() {
     return
   fi
 
-  if tmux list-sessions | grep "${session_name}"; then
+  if tmux list-sessions | grep "^${session_name}"; then
     tmux attach-session -t "${session_name}"
   else
     tmux new-session -d -s "${session_name}"
