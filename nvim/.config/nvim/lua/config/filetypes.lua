@@ -2,6 +2,7 @@ vim.filetype.add({
   extension = {
     sls = "sls.yaml.jinja",
     j2 = "jinja",
+    tf = "terraform",
   },
   pattern = {
     [".*.service"] = "systemd",
