@@ -39,6 +39,7 @@ return {
           "terraform-ls",
           "templ",
           "tflint",
+          "typescript-language-server",
           "prettier",
           "yaml-language-server",
         },
@@ -92,6 +93,7 @@ return {
       "ruff",
       "templ",
       "terraformls",
+      "tsserver",
       "yamlls",
     })
 
