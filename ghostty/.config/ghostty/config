@@ -1,7 +1,9 @@
 font-family = "JetBrainsMono Nerd Font"
 font-style = "Medium"
 font-size = 16
-font-feature = +liga
+#font-feature = "ss01"
+font-feature = calt
+font-feature = liga
 theme = "onedarkpro_onedark"
 background-opacity = 0.98
 window-padding-x = 10
