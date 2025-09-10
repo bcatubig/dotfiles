@@ -1,14 +1,21 @@
+theme = "onedarkpro_onedark"
+
 font-family = "JetBrainsMono Nerd Font"
 font-style = "Medium"
 font-size = 16
 #font-feature = "ss01"
 font-feature = calt
 font-feature = liga
-theme = "onedarkpro_onedark"
+
 background-opacity = 0.98
+
 window-padding-x = 10
 window-padding-y = 10
+
 confirm-close-surface = false
+
 cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
+
+keybind = super+r=reload_config
