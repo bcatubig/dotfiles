@@ -6,7 +6,7 @@ return {
     local ignore = { "^node_modules/", "^.git/", "^.terraform/" }
 
     fzf.setup({
-      { "hide" },
+      { "default" },
       file_ignore_patterns = ignore,
       defaults = {
         formatter = "path.dirname_first",
@@ -33,12 +33,25 @@ return {
     fzf.register_ui_select()
   end,
   keys = {
-    { "<leader>sh", "<cmd>FzfLua helptags<cr>", desc = "[S]earch [H]elp" },
-    { "<leader>sk", "<cmd>FzfLua keymaps<cr>", desc = "[S]earch [K]eymaps" },
+    {
+      "<leader>sh",
+      function()
+        require("fzf-lua").help_tags({ resume = true })
+      end,
+      desc = "[S]earch [H]elp",
+    },
+    {
+      "<leader>sk",
+      function()
+        require("fzf-lua").keymaps({ resume = true })
+      end,
+      desc = "[S]earch [K]eymaps",
+    },
     {
       "<leader>sf",
       function()
         require("fzf-lua").files({
+          resume = true,
           git_icons = false,
           file_icons = false,
           no_headers_i = true,
@@ -49,12 +62,25 @@ return {
       end,
       desc = "[S]earch [F]iles",
     },
-    { "<leader>sg", "<cmd>FzfLua live_grep_glob<cr>", desc = "[S]earch [G]rep" },
-    { "<leader>sr", "<cmd>FzfLua live_grep_resume<cr>", desc = "[S]earch Resume" },
+    {
+      "<leader>sg",
+      function()
+        require("fzf-lua").live_grep_glob({ resume = true })
+      end,
+      desc = "[S]earch [G]rep",
+    },
+    {
+      "<leader>sr",
+      function()
+        require("fzf-lua").live_grep_resume({ resume = true })
+      end,
+      desc = "[S]earch Resume",
+    },
     {
       "<leader>s.",
       function()
         require("fzf-lua").oldfiles({
+          resume = true,
           file_icons = false,
           no_header_i = true,
           winopts = {
@@ -64,13 +90,32 @@ return {
       end,
       desc = "[S]earch Recent Files",
     },
-    { "<leader>sw", "<cmd>FzfLua grep_cWORD<cr>", desc = "[S]earch [W]ord" },
-    { "<leader>sC", "<cmd>FzfLua colorschemes<cr>", desc = "[S]earch [C]olorschemes" },
-    { "<leader>sc", "<cmd>FzfLua commands<cr>", desc = "[S]earch [C]ommands" },
+    {
+      "<leader>sw",
+      function()
+        require("fzf-lua").grep_cWORD({ resume = true })
+      end,
+      desc = "[S]earch [W]ord",
+    },
+    {
+      "<leader>sC",
+      function()
+        require("fzf-lua").colorschemes({ resume = true })
+      end,
+      desc = "[S]earch [C]olorschemes",
+    },
+    {
+      "<leader>sc",
+      function()
+        require("fzf-lua").commands({ resume = true })
+      end,
+      desc = "[S]earch [C]ommands",
+    },
     {
       "<leader><leader>",
       function()
         require("fzf-lua").buffers({
+          resume = true,
           git_icons = false,
           file_icons = false,
           no_header_i = true,
@@ -81,11 +126,18 @@ return {
       end,
       desc = "[S]earch Buffers",
     },
-    { "<leader>/", "<cmd>FzfLua grep_curbuf<cr>", desc = "Search current buffer" },
+    {
+      "<leader>/",
+      function()
+        require("fzf-lua").grep_curbuf({ resume = true })
+      end,
+      desc = "Search current [b]uffer",
+    },
     {
       "<leader>gb",
       function()
         require("fzf-lua").git_branches({
+          resume = true,
           cmd = "git branch --color",
         })
       end,

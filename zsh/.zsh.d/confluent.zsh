@@ -1,0 +1,1 @@
+eval "$(confluent completion zsh)"
