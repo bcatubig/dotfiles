@@ -17,6 +17,7 @@ config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Medium" })
 config.font_size = is_darwin() and 16 or 13
 config.scrollback_lines = 20000
 config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = true
 config.window_close_confirmation = "NeverPrompt"
 config.hide_tab_bar_if_only_one_tab = true
 config.window_background_opacity = 0.98
