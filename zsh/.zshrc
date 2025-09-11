@@ -168,6 +168,7 @@ source ~/.zsh.d/tmux.zsh
 source ~/.zsh.d/pyenv.zsh
 source ~/.zsh.d/yazi.zsh
 source ~/.zsh.d/confluent.zsh
+source ~/.zsh.d/docker.zsh
 
 # Source any custom configs
 [[ ! -f ~/custom.zsh ]] || source ~/custom.zsh
