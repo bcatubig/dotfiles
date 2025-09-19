@@ -13,11 +13,21 @@ return {
   --- @module 'blink.pairs'
   --- @type blink.pairs.Config
   opts = {
+    mappings = {
+      enabled = true,
+      disabled_filetypes = {},
+    },
     highlights = {
       enabled = true,
+      groups = {
+        "BlinkPairsOrange",
+        "BlinkPairsPurple",
+        "BlinkPairsBlue",
+      },
 
       matchparen = {
         enabled = true,
+        group = "BlinkPairsMatchParen",
       },
     },
   },
