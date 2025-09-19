@@ -82,7 +82,7 @@ return {
           },
           scrollbar = false,
           scrolloff = 1,
-          -- auto_show = false,
+          auto_show = false,
           -- border = nil,
           scrolloff = 1,
           scrollbar = false,
