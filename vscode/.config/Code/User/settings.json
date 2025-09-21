@@ -1,0 +1,18 @@
+{
+  "workbench.colorTheme": "One Dark Pro",
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.rulers": [80, 120],
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontSize": 16,
+  "editor.fontLigatures": true,
+  "database-client.autoSync": true,
+  "telemetry.editStats.enabled": false,
+  "telemetry.feedback.enabled": false,
+  "telemetry.telemetryLevel": "off",
+  "C_Cpp.copilotHover": "disabled",
+  "chat.disableAIFeatures": true,
+  "workbench.startupEditor": "none",
+  "git.openRepositoryInParentFolders": "always",
+  "explorer.confirmDelete": false
+}
