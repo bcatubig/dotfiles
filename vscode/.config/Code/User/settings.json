@@ -1,18 +1,149 @@
 {
-  "workbench.colorTheme": "One Dark Pro",
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "breadcrumbs.enabled": false,
+  "C_Cpp.copilotHover": "disabled",
+  "chat.disableAIFeatures": true,
+  "chat.sendElementsToChat.attachCSS": false,
+  "chat.sendElementsToChat.attachImages": false,
+  "chat.sendElementsToChat.enabled": false,
+  "docker.extension.enableComposeLanguageServer": false,
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
   "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "editor.rulers": [80, 120],
-  "editor.fontFamily": "JetBrainsMono Nerd Font",
-  "editor.fontSize": 16,
-  "editor.fontLigatures": true,
-  "database-client.autoSync": true,
+  "explorer.confirmDelete": false,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "git.openRepositoryInParentFolders": "always",
+  "livePreview.customExternalBrowser": "Firefox",
+  "sqltools.useNodeRuntime": true,
   "telemetry.editStats.enabled": false,
   "telemetry.feedback.enabled": false,
   "telemetry.telemetryLevel": "off",
-  "C_Cpp.copilotHover": "disabled",
-  "chat.disableAIFeatures": true,
+  "vim.history": 100,
+  "vim.leader": "<Space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // Navigation
+    {
+      "before": ["<S-h>"],
+      "commands": [":bprevious"]
+    },
+    {
+      "before": ["<S-l>"],
+      "commands": [":bnext"]
+    },
+    // Splits
+    {
+      "before": ["leader", "v"],
+      "commands": [":vsplit"]
+    },
+    {
+      "before": ["leader", "s"],
+      "commands": [":split"]
+    },
+    // Panes
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    // QOL
+    {
+      "before": ["leader", "w"],
+      "commands": [":w!"]
+    },
+    {
+      "before": ["leader", "q"],
+      "commands": [":q!"]
+    },
+    {
+      "before": ["leader", "x"],
+      "commands": [":x!"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<S-k>"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+    {
+      "before": ["leader", "f"],
+      "commands": ["editor.action.formatDocument"]
+    }
+  ],
+  "vim.useSystemClipboard": true,
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["leader", "c"],
+      "commands": ["editor.action.commentLine"]
+    }
+  ],
+  "vs-kubernetes": {
+    "vscode-kubernetes.helm-path-linux": "/home/brandon/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm",
+    "vscode-kubernetes.kubectl-path-linux": "/home/brandon/.local/state/vs-kubernetes/tools/kubectl/kubectl",
+    "vscode-kubernetes.minikube-path-linux": "/home/brandon/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube"
+  },
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.editor.autoLockGroups": {
+    "workbench.editor.chatSession": false
+  },
+  "workbench.externalBrowser": "firefox",
   "workbench.startupEditor": "none",
-  "git.openRepositoryInParentFolders": "always",
-  "explorer.confirmDelete": false
+  "workbench.statusBar.visible": false
 }
