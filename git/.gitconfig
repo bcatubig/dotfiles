@@ -65,4 +65,4 @@
   updateRefs = true
 
 [include]
-  path = ~/gituser
+  path = ~/.gituser
