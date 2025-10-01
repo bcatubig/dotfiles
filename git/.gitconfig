@@ -1,5 +1,6 @@
 [core]
   pager = delta
+  excludesfile = ~/.gitignore
 
 [interactive]
   diffFilter = delta --color-only
@@ -13,6 +14,13 @@
 
 [push]
   autoSetupRemote = true
+  default = simple
+  followTags = true
+
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
 
 [pull]
   ff = only
@@ -25,6 +33,36 @@
 
 [user]
   name = Brandon Catubig
+
+[column]
+  ui = auto
+
+[branch]
+  sort = -committerdate
+
+[tag]
+  sort = version:refname
+
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+
+[help]
+  autocorrect = prompt
+
+[commit]
+  verbose = true
+
+[rerere]
+  enabled = true
+  autoupdate = true
+
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
 
 [include]
   path = ~/gituser
