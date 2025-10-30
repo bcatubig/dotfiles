@@ -15,6 +15,7 @@ zmodule zsh-users/zsh-history-substring-search
 zmodule fzf
 zmodule git
 zmodule homebrew
+zmodule exa
 
 # zim community modules
 zmodule joke/zim-kubectl
