@@ -1,129 +1,73 @@
 return {
-
   "saghen/blink.cmp",
-  dependencies = {
-    "rafamadriz/friendly-snippets",
-    { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
-    "onsails/lspkind.nvim",
-  },
+  -- optional: provides snippets for the snippet source
+  dependencies = { "rafamadriz/friendly-snippets" },
+
+  -- use a release tag to download pre-built binaries
   version = "1.*",
-  config = function()
-    vim.cmd("highlight Pmenu guibg=none")
-    vim.cmd("highlight PmenuExtra guibg=none")
-    vim.cmd("highlight FloatBorder guibg=none")
-    vim.cmd("highlight NormalFloat guibg=none")
+  -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
+  -- build = 'cargo build --release',
+  -- If you use nix, you can build from source using latest nightly rust with:
+  -- build = 'nix run .#build-plugin',
 
-    require("blink.cmp").setup({
+  ---@module 'blink.cmp'
+  ---@type blink.cmp.Config
+  opts = {
+    keymap = { preset = "enter" },
+    appearance = {
+      nerd_font_variant = "mono",
+      use_nvim_cmp_as_default = false,
+    },
 
-      keymap = {
-        preset = "super-tab",
-        ["<CR>"] = { "accept", "fallback" },
-      },
-
-      cmdline = {
-        completion = {
-          ghost_text = { enabled = true },
+    completion = {
+      menu = {
+        border = "rounded",
+        draw = {
+          treesitter = { "lsp" },
         },
       },
-      appearance = {
-        nerd_font_variant = "normal",
-      },
-
-      completion = {
-        trigger = {
-          show_in_snippet = false,
-          show_on_insert_on_trigger_character = false,
-        },
-        list = {
-          selection = {
-            preselect = false,
-          },
-        },
-
-        menu = {
-          draw = {
-            treesitter = { "lsp" },
-            columns = {
-              { "kind_icon" },
-              { "label", "label_description", gap = 1 },
-              { "kind" },
-              { "source_name" },
-            },
-
-            components = {
-              kind_icon = {
-                text = function(ctx)
-                  local icon = ctx.kind_icon
-                  if vim.tbl_contains({ "Path" }, ctx.source_name) then
-                    local dev_icon, _ = require("nvim-web-devicons").get_icon(ctx.label)
-                    if dev_icon then
-                      icon = dev_icon
-                    end
-                  else
-                    icon = require("lspkind").symbolic(ctx.kind, {
-                      mode = "symbol",
-                    })
-                  end
-
-                  return icon .. ctx.icon_gap
-                end,
-                highlight = function(ctx)
-                  local hl = ctx.kind_hl
-                  if vim.tbl_contains({ "Path" }, ctx.source_name) then
-                    local dev_icon, dev_hl = require("nvim-web-devicons").get_icon(ctx.label)
-                    if dev_icon then
-                      hl = dev_hl
-                    end
-                  end
-                  return hl
-                end,
-              },
-            },
-          },
-          scrollbar = false,
-          scrolloff = 1,
-          auto_show = false,
-          -- border = nil,
-          scrolloff = 1,
-          scrollbar = false,
-        },
-        documentation = {
-          window = {
-            scrollbar = false,
-            winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,EndOfBuffer:BlinkCmpDoc",
-          },
-          auto_show = false,
-          auto_show_delay_ms = 200,
+      documentation = {
+        auto_show = true,
+        auto_show_delay_ms = 250,
+        window = {
+          border = "rounded",
         },
       },
-
-      sources = {
-        default = { "lsp", "path", "snippets", "buffer" },
-        per_filetype = {
-          sql = { "lsp", "dadbod", "snippets", "buffer" },
-        },
-        providers = {
-          dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
-          path = {
-            opts = {
-              get_cwd = function(_)
-                return vim.fn.getcwd()
-              end,
-            },
-          },
+      list = {
+        selection = {
+          preselect = false,
         },
       },
+    },
 
-      fuzzy = {
-        implementation = "prefer_rust_with_warning",
-        sorts = {
-          "exact",
-          "score",
-          "sort_text",
+    sources = {
+      default = {
+        "lazydev",
+        "lsp",
+        "path",
+        "snippets",
+        "buffer",
+      },
+      providers = {
+        lazydev = {
+          name = "LazyDev",
+          module = "lazydev.integrations.blink",
+          score_offset = 100,
         },
       },
-      signature = { enabled = true },
-    })
-  end,
-  opts_extend = { "sources.default" },
+    },
+
+    fuzzy = {
+      implementation = "prefer_rust_with_warning",
+      sorts = {
+        "exact",
+        "score",
+        "sort_text",
+      },
+    },
+  },
+
+  opts_extend = {
+    "sources.default",
+  },
 }
