@@ -9,6 +9,7 @@ return {
       build = "make",
     },
     { "nvim-tree/nvim-web-devicons", enabled = true },
+    "nvim-telescope/telescope-file-browser.nvim",
   },
   config = function()
     require("telescope").setup {
@@ -21,8 +22,11 @@ return {
 
     pcall(require("telescope").load_extension, "fzf")
     pcall(require("telescope").load_extension, "ui-select")
+    pcall(require("telescope").load_extension, "file_browser")
 
     local builtin = require "telescope.builtin"
+    local extensions = require("telescope").extensions
+    vim.keymap.set("n", "<leader>sb", extensions.file_browser.file_browser, { desc = "[S]earch [H]elp" })
     vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
     vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
     vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
