@@ -1,4 +1,4 @@
-local opt = vim.opt
+local opt = vim.o
 
 opt.relativenumber = true
 opt.tabstop = 2
@@ -27,3 +27,4 @@ opt.confirm = true
 opt.termguicolors = true
 opt.winborder = "rounded"
 -- opt.winborder = "single"
+opt.confirm = true
