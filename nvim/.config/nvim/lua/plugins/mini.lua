@@ -2,15 +2,21 @@ return {
   "nvim-mini/mini.nvim",
   version = false,
   config = function()
-    require("mini.basics").setup()
+    require("mini.basics").setup {
+      mappings = {
+        windows = true,
+        move_with_alt = true,
+      },
+    }
 
     require("mini.ai").setup {
       n_lines = 500,
     }
-
-    require("mini.surround").setup()
     require("mini.comment").setup()
-    require("mini.jump").setup()
+    require("mini.surround").setup()
+    require("mini.move").setup()
     require("mini.bufremove").setup()
+    require("mini.bracketed").setup()
+    require("mini.jump").setup()
   end,
 }
