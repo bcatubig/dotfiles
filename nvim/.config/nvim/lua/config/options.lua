@@ -28,3 +28,7 @@ opt.termguicolors = true
 opt.winborder = "rounded"
 -- opt.winborder = "single"
 opt.confirm = true
+
+vim.schedule(function()
+  opt.clipboard = "unnamedplus"
+end)
