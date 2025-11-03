@@ -1,4 +1,4 @@
-vim.filetype.add({
+vim.filetype.add {
   extension = {
     sls = "sls.yaml.jinja",
     j2 = "jinja",
@@ -23,4 +23,4 @@ vim.filetype.add({
     [".*.conf.j2"] = "conf.jinja",
     [".*.yaml.j2"] = "yaml.jinja",
   },
-})
+}

@@ -1,8 +1,9 @@
-require("config.autocmds")
-require("config.keymaps")
-require("config.filetypes")
-require("config.options")
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+vim.g.have_nerd_font = true
 
-require("core.lazy")
-
-vim.lsp.set_log_level("off")
+require "config.options"
+require "config.keymaps"
+require "config.autocmds"
+require "config.util"
+require "config.lazy"

@@ -1,0 +1,47 @@
+return {
+  {
+    "mason-org/mason-lspconfig.nvim",
+    opts = {},
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      {
+        "neovim/nvim-lspconfig",
+      },
+      { "j-hui/fidget.nvim", opts = {} },
+    },
+  },
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    opts = {
+      ensure_installed = {
+        "astro",
+        "ansiblels",
+        "clangd",
+        "dockerls",
+        "eslint",
+        "lua_ls",
+        "stylua",
+        "pyright",
+        "gopls",
+        "impl",
+        "gotests",
+        "gofumpt",
+        "goimports",
+        "delve",
+        "debugpy",
+        "ruff",
+        "html",
+        "cssls",
+        "ts_ls",
+        "gh_actions_ls",
+        "emmet_language_server",
+        "yamlls",
+        "terraformls",
+        "tflint",
+        "tailwindcss",
+        "prettier",
+      },
+      run_on_start = false,
+    },
+  },
+}

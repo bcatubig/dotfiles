@@ -4,14 +4,14 @@ return {
   dependencies = { "nvim-lua/plenary.nvim" },
   event = "VeryLazy",
   config = function()
-    local harpoon = require("harpoon")
+    local harpoon = require "harpoon"
     harpoon:setup()
   end,
   keys = {
     {
       "<leader>a",
       function()
-        local harpoon = require("harpoon")
+        local harpoon = require "harpoon"
         harpoon:list():add()
       end,
       desc = "Harpoon [A]dd",
@@ -26,14 +26,14 @@ return {
     {
       "<C-S-P>",
       function()
-        local harpoon = require("harpoon")
+        local harpoon = require "harpoon"
         harpoon:list():prev()
       end,
     },
     {
       "<C-S-N>",
       function()
-        local harpoon = require("harpoon")
+        local harpoon = require "harpoon"
         harpoon:list():next()
       end,
     },

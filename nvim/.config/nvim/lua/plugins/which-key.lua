@@ -2,14 +2,17 @@ return {
   "folke/which-key.nvim",
   event = "VimEnter",
   opts = {
-    delay = 50,
+    delay = 0,
     preset = "modern",
-    mappings = true,
-    keys = {},
+    icons = {
+      mappings = true,
+    },
     spec = {
-      { "<leader>g", group = "[G]it" },
       { "<leader>s", group = "[S]earch" },
-      { "<leader>x", group = "[T]rouble" },
+      { "<leader>t", group = "[T]oggle" },
+      { "<leader>g", group = "[G]it" },
+      { "<leader>gh", group = "Git [H]unk" },
+      { "<leader>x", group = "Trouble" },
     },
   },
 }

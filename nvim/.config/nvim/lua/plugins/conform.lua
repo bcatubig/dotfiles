@@ -6,7 +6,7 @@ return {
     {
       "<leader>f",
       function()
-        require("conform").format({ async = true })
+        require("conform").format { async = true }
       end,
       desc = "Format buffer",
     },
@@ -14,7 +14,7 @@ return {
   config = function()
     vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 
-    require("conform").setup({
+    require("conform").setup {
       notify_on_error = false,
       formatters_by_ft = {
         astro = { "prettier" },
@@ -42,7 +42,7 @@ return {
         end
         return { timeout_ms = 500, lsp_format = "fallback" }
       end,
-    })
+    }
 
     vim.api.nvim_create_user_command("FormatDisable", function(args)
       if args.bang then
