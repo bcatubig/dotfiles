@@ -49,7 +49,7 @@ return {
         sources = {
           explorer = {
             -- focus = "input",
-            auto_close = true,
+            auto_close = false,
           },
         },
       },
