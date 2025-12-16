@@ -134,9 +134,6 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 eval "$(zoxide init --cmd cd zsh)"
 
 # disable sort when completing `git checkout`
@@ -160,16 +157,14 @@ zstyle ':fzf-tab:*' use-fzf-default-opts yes
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
 # Load our stuff
-source ~/.zsh.d/arch.zsh
 source ~/.zsh.d/aliases.zsh
-source ~/.zsh.d/homebrew.zsh
 source ~/.zsh.d/paths.zsh
 source ~/.zsh.d/tmux.zsh
-source ~/.zsh.d/pyenv.zsh
-source ~/.zsh.d/yazi.zsh
-source ~/.zsh.d/confluent.zsh
 source ~/.zsh.d/docker.zsh
 source ~/.zsh.d/kafka.zsh
 
 # Source any custom configs
 [[ ! -f ~/custom.zsh ]] || source ~/custom.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
