@@ -45,8 +45,11 @@ return {
     opts = {
       ---@class snacks.explorer.Config
       picker = {
-        -- hidden = true,
+        hidden = true,
         sources = {
+          files = {
+            hidden = true,
+          },
           explorer = {
             -- focus = "input",
             auto_close = false,
