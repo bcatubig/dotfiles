@@ -45,10 +45,19 @@ return {
     opts = {
       ---@class snacks.explorer.Config
       picker = {
+        exclude = {
+          ".git/",
+          ".terraform/",
+        },
         hidden = true,
         sources = {
           files = {
             hidden = true,
+            ignored = {
+              ".terraform/",
+              ".git/",
+              "node_modules/",
+            },
           },
           explorer = {
             -- focus = "input",
