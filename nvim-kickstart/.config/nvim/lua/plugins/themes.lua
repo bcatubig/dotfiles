@@ -18,7 +18,7 @@ return {
     config = function()
       require('onedarkpro').setup {
         options = {
-          -- transparency = true,
+          transparency = true,
           cursorline = true,
         },
       }
