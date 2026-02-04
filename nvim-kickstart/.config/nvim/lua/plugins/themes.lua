@@ -14,6 +14,7 @@ return {
   },
   {
     'olimorris/onedarkpro.nvim',
+    priority = 1000,
     config = function()
       require('onedarkpro').setup {
         options = {
@@ -22,8 +23,26 @@ return {
         },
       }
 
-      vim.cmd.colorscheme 'onedark'
+      -- vim.cmd.colorscheme 'onedark'
     end,
   },
-  { 'EdenEast/nightfox.nvim' },
+  {
+    'EdenEast/nightfox.nvim',
+    priority = 1000,
+    config = function()
+      require('nightfox').setup {
+        options = {
+          transparent = true,
+          colorblind = {
+            enable = true,
+            severity = {
+              deutan = 1,
+            },
+          },
+        },
+      }
+
+      vim.cmd.colorscheme 'nordfox'
+    end,
+  },
 }
