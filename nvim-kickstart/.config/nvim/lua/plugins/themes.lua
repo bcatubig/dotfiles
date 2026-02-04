@@ -25,4 +25,5 @@ return {
       vim.cmd.colorscheme 'onedark'
     end,
   },
+  { 'EdenEast/nightfox.nvim' },
 }

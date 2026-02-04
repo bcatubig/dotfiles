@@ -83,6 +83,7 @@ return {
       ['yaml-language-server'] = {},
       gopls = {},
       pyright = {},
+      taplo = {},
     }
 
     local ensure_installed = vim.tbl_keys(servers or {})

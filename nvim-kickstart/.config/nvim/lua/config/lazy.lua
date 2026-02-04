@@ -21,12 +21,12 @@ vim.g.maplocalleader = '\\'
 -- Setup lazy.nvim
 require('lazy').setup {
   spec = {
-    -- import your plugins
     { import = 'plugins' },
   },
   install = { colorscheme = { 'habamax' } },
   checker = { enabled = false },
   ui = {
+    border = 'rounded',
     icons = vim.g.have_nerd_font and {} or {
       cmd = '⌘',
       config = '🛠',
