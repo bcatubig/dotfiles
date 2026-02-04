@@ -72,3 +72,29 @@ vim.o.foldlevel = 0
 vim.o.foldlevelstart = 99
 vim.o.foldnestmax = 4
 vim.o.winborder = 'rounded'
+
+local signs = {
+  Error = ' ',
+  Warn = ' ',
+  Hint = '󰌵 ',
+  Info = ' ',
+}
+
+local signConf = {
+  text = {},
+  texthl = {},
+  numhl = {},
+}
+
+for type, icon in pairs(signs) do
+  local severityName = string.upper(type)
+  local severity = vim.diagnostic.severity[severityName]
+  local hl = 'DiagnosticSign' .. type
+  signConf.text[severity] = icon
+  signConf.texthl[severity] = hl
+  signConf.numhl[severity] = hl
+end
+
+vim.diagnostic.config {
+  signs = signConf,
+}

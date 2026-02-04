@@ -18,12 +18,12 @@ return {
     config = function()
       require('onedarkpro').setup {
         options = {
-          transparency = true,
+          -- transparency = true,
           cursorline = true,
         },
       }
 
-      -- vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'onedark'
     end,
   },
   {
@@ -32,17 +32,23 @@ return {
     config = function()
       require('nightfox').setup {
         options = {
-          transparent = true,
+          styles = {
+            comments = 'italic',
+            keywords = 'bold',
+            types = 'italic,bold',
+          },
           colorblind = {
             enable = true,
             severity = {
+              protan = 0.3,
               deutan = 1,
+              tritan = 0.1,
             },
           },
         },
       }
 
-      vim.cmd.colorscheme 'nordfox'
+      -- vim.cmd.colorscheme 'nordfox'
     end,
   },
 }
