@@ -1,7 +1,8 @@
-return { -- Fuzzy Finder (files, lsp, etc)
+return {
   'nvim-telescope/telescope.nvim',
   enabled = true,
   event = 'VimEnter',
+  version = false,
   dependencies = {
     'nvim-lua/plenary.nvim',
     {
@@ -15,15 +16,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
   },
   config = function()
     require('telescope').setup {
-      -- You can put your default mappings / updates / etc. in here
-      --  All the info you're looking for is in `:help telescope.setup()`
-      --
-      -- defaults = {
-      --   mappings = {
-      --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-      --   },
-      -- },
-      -- pickers = {}
       extensions = {
         ['ui-select'] = { require('telescope.themes').get_dropdown() },
       },
@@ -106,4 +98,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- Shortcut for searching your Neovim configuration files
     vim.keymap.set('n', '<leader>sn', function() builtin.find_files { cwd = vim.fn.stdpath 'config' } end, { desc = '[S]earch [N]eovim files' })
   end,
+  keys = {
+    -- git
+    { '<leader>gc', '<cmd>Telescope git_commits<CR>', desc = 'Commits' },
+    { '<leader>gl', '<cmd>Telescope git_commits<CR>', desc = 'Commits' },
+    { '<leader>gs', '<cmd>Telescope git_status<CR>', desc = 'Status' },
+    { '<leader>gS', '<cmd>Telescope git_stash<cr>', desc = 'Git Stash' },
+  },
 }
