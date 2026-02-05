@@ -27,6 +27,7 @@ return {
       lua = { 'stylua' },
       bash = { 'shfmt' },
       zsh = { 'shfmt' },
+      astro = { 'prettier' },
     },
   },
 }
