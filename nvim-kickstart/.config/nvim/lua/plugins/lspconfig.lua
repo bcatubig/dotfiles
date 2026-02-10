@@ -80,6 +80,8 @@ return {
     --  See `:help lsp-config` for information about keys and how to configure
     local servers = {
       astro = {},
+      html = {},
+      cssls = {},
       terraformls = {},
       ["yaml-language-server"] = {},
       gopls = {},
@@ -87,6 +89,7 @@ return {
       taplo = {},
       ruff = {},
       ["typescript-language-server"] = {},
+      tailwindcss = {},
     }
 
     local ensure_installed = vim.tbl_keys(servers or {})
