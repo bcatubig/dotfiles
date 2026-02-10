@@ -1,6 +1,6 @@
 return {
-  'folke/which-key.nvim',
-  event = 'VimEnter',
+  "folke/which-key.nvim",
+  event = "VimEnter",
   opts = {
     -- delay between pressing a key and opening which-key (milliseconds)
     delay = 0,
@@ -8,18 +8,18 @@ return {
 
     -- Document existing key chains
     spec = {
-      { '<leader>d', group = '[D]ebug', mode = { 'n', 'v' } },
-      { '<leader>s', group = '[S]earch', mode = { 'n', 'v' } },
-      { '<leader>t', group = '[T]oggle' },
-      { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-      { '<leader>x', group = 'Trouble', mode = { 'n', 'v' } },
+      { "<leader>d", group = "[D]ebug", mode = { "n", "v" } },
+      { "<leader>s", group = "[S]earch", mode = { "n", "v" } },
+      { "<leader>t", group = "[T]oggle" },
+      { "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
+      { "<leader>x", group = "Trouble", mode = { "n", "v" } },
     },
   },
   keys = {
     {
-      '<leader>?',
-      function() require('which-key').show { global = false } end,
-      desc = 'Buffer Local Keymaps (which-key)',
+      "<leader>?",
+      function() require("which-key").show({ global = false }) end,
+      desc = "Buffer Local Keymaps (which-key)",
     },
   },
 }
