@@ -10,6 +10,7 @@ return { -- Highlight, edit, and navigate code
       "css",
       "go",
       "diff",
+      "hcl",
       "helm",
       "html",
       "ini",

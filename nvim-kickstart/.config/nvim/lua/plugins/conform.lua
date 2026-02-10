@@ -31,6 +31,10 @@ return {
       markdown = { "prettier" },
       json = { "prettier" },
       yaml = { "prettier" },
+      hcl = { "packer_fmt" },
+      terraform = { "terraform_fmt" },
+      tf = { "terraform_fmt" },
+      ["terraform-vars"] = { "terraform_fmt" },
     },
   },
 }
