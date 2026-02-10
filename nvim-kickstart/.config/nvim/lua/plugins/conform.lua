@@ -28,6 +28,9 @@ return {
       bash = { 'shfmt' },
       zsh = { 'shfmt' },
       astro = { 'prettier' },
+      markdown = { 'prettier' },
+      json = { 'prettier' },
+      yaml = { 'prettier' },
     },
   },
 }
